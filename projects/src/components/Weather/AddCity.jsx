@@ -1,6 +1,8 @@
+import { Button } from "@mui/material";
+
 export const AddCity = (props) => {
   return (
-    <div>
+    <div className="add-city">
       <input
         className="city-name"
         placeholder="City Name"
@@ -9,9 +11,9 @@ export const AddCity = (props) => {
         value={props.value}
         onChange={props.onChange}
       />
-      <button className="city-btn" onClick={props.onClick}>
+      <Button className="city-btn" onClick={props.onClick}>
         Click
-      </button>
+      </Button>
     </div>
   );
 };

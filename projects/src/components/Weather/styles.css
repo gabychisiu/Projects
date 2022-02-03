@@ -14,3 +14,12 @@
     border: solid gray;
     border-radius: 5px;
 }
+
+.city-btn {
+    border: solid turquoise !important;
+    padding: 0 !important;
+}
+
+.city-name {
+    margin-right: 5px;
+}

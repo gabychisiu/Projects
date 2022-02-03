@@ -1,6 +1,6 @@
 import { FaCloud, FaCloudRain, FaRegSnowflake, FaSun } from "react-icons/fa";
 
-export const WeatherDay = ({dayNumber, apiWeather}) => {
+export const WeatherDay = ({dayNumber, apiWeather, time}) => {
   const current = new Date();
   const date = `${current.getDay()}`;
   const month = `${current.getMonth()}`;
@@ -84,7 +84,8 @@ export const WeatherDay = ({dayNumber, apiWeather}) => {
       <h3>{today(dayNumber)}</h3>
       <p>
         {thisMonth()}
-        {thisDay(dayNumber)},{" "}
+        {thisDay(dayNumber)},
+        {time}
       </p>
       <p>{iconChange(apiWeather.weather.main)}</p>
       <h3>{apiWeather.temp} °C</h3>
