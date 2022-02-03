@@ -169,8 +169,8 @@ export const WeatherWidget = () => {
           dayNumber={4}
           apiWeather={forecast.fifthDay}
           time={forecast.time}
-        />
+          />
       </div>
-    </div>
+    </div> 
   );
 };

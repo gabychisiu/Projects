@@ -7,7 +7,6 @@ import {
   Switch,
   Route,
   Redirect,
-  // Redirect,
 } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
@@ -38,6 +37,11 @@ function App() {
         fontSize: "1.3rem",
         lineHeight: 1.16,
         letterSpacing: "0.03em",
+      },
+      button: {
+        fontSize: '1.2rem',
+        fontWeight: 200,
+        lineHeight: 0.72,
       },
     },
   });

@@ -22,6 +22,7 @@ export const Home = () => {
   const [forecast, setForecast] = useState(weatherTemplate);
   const [latPosition, setLatPosition] = useState(0);
   const [lonPosition, setLonPosition] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   const extractTime = (serverDateTime) => {
     // 2022-02-03 12:00:00 -> 12:00
@@ -66,24 +67,31 @@ export const Home = () => {
       .then((response) => response.json())
       .then((data) => {
         setForecast(buildWeatherTemplate(data));
+        setLoading(false);
       });
   }, [latPosition, lonPosition]);
 
   return (
     <div className="weather-all">
-      <div className="city-data">
-        <h3>
-          <FaMapMarkerAlt />
-          {forecast.city.name}, {forecast.city.country}
-        </h3>
-      </div>
-      <div className="weather">
-        <WeatherDay
-          dayNumber={0}
-          apiWeather={forecast.firstDay}
-          time={forecast.time}
-        />
-      </div>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div>
+          <div className="city-data">
+            <h3>
+              <FaMapMarkerAlt />
+              {forecast.city.name}, {forecast.city.country}
+            </h3>
+          </div>
+          <div className="weather">
+            <WeatherDay
+              dayNumber={0}
+              apiWeather={forecast.firstDay}
+              time={forecast.time}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
