@@ -1,0 +1,16 @@
+.weather {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+}
+
+.weather-all {
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-day {
+    padding: 5px;
+    border: solid gray;
+    border-radius: 5px;
+}

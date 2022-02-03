@@ -1,5 +1,12 @@
-import { WeatherWidget } from "../Weather/Weather";
+import { WeatherWidget } from "../Weather/WeatherWidget";
+import React from "react";
+import "./styles.css";
 
 export const WeatherPage = () => {
-  return <WeatherWidget />;
+  return (
+    <div className="weather-page">
+      <h1>5-Day Forecast</h1>
+      <WeatherWidget/>
+    </div>
+  );
 };

@@ -1,0 +1,8 @@
+.weather-page {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    background-color: rgb(236, 232, 232);
+}
