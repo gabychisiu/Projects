@@ -6,6 +6,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
   // Redirect,
 } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -53,6 +54,7 @@ function App() {
             <Route path="/weather">
               <WeatherPage />
             </Route>
+            <Redirect to="/home" />
           </Switch>
         </div>
       </Router>
