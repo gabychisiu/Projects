@@ -54,6 +54,7 @@ export const WeatherWidget = () => {
   const [forecast, setForecast] = useState(weatherTemplate);
   const [inputValue, setInputValue] = useState("");
   const [city, setCity] = useState("London");
+  const [loading, setLoading] = useState(true);
 
   const extractTime = (serverDateTime) => {
     // 2022-02-03 12:00:00 -> 12:00
@@ -129,48 +130,55 @@ export const WeatherWidget = () => {
       .then((data) => {
         console.log("date server: ", data);
         setForecast(buildWeatherTemplate(data));
+        setLoading(false);
       });
   }, [city]);
 
   return (
     <div className="weather-all">
-      <div className="city-data">
-        <AddCity
-          value={inputValue}
-          onChange={onInputChange}
-          onClick={onSubmitCity}
-        />
-        <h3>
-          {forecast.city.name}, {forecast.city.country}
-        </h3>
-      </div>
-      <div className="weather">
-        <WeatherDay
-          dayNumber={0}
-          apiWeather={forecast.firstDay}
-          time={forecast.time}
-        />
-        <WeatherDay
-          dayNumber={1}
-          apiWeather={forecast.secondDay}
-          time={forecast.time}
-        />
-        <WeatherDay
-          dayNumber={2}
-          apiWeather={forecast.thirdDay}
-          time={forecast.time}
-        />
-        <WeatherDay
-          dayNumber={3}
-          apiWeather={forecast.forthDay}
-          time={forecast.time}
-        />
-        <WeatherDay
-          dayNumber={4}
-          apiWeather={forecast.fifthDay}
-          time={forecast.time}
-          />
-      </div>
-    </div> 
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div>
+          <div className="city-data">
+            <AddCity
+              value={inputValue}
+              onChange={onInputChange}
+              onClick={onSubmitCity}
+            />
+            <h3>
+              {forecast.city.name}, {forecast.city.country}
+            </h3>
+          </div>
+          <div className="weather">
+            <WeatherDay
+              dayNumber={0}
+              apiWeather={forecast.firstDay}
+              time={forecast.time}
+            />
+            <WeatherDay
+              dayNumber={1}
+              apiWeather={forecast.secondDay}
+              time={forecast.time}
+            />
+            <WeatherDay
+              dayNumber={2}
+              apiWeather={forecast.thirdDay}
+              time={forecast.time}
+            />
+            <WeatherDay
+              dayNumber={3}
+              apiWeather={forecast.forthDay}
+              time={forecast.time}
+            />
+            <WeatherDay
+              dayNumber={4}
+              apiWeather={forecast.fifthDay}
+              time={forecast.time}
+            />
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
