@@ -1,18 +1,28 @@
 .weather {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 5px;
+}
+
+@media (max-width: 700px) {
+  .weather {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     margin: 5px;
+  }
 }
 
 .weather-all {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .weather-day {
-    padding: 5px;
-    border: solid gray;
-    border-radius: 5px;
+  padding: 5px;
+  border: solid gray;
+  border-radius: 5px;
 }
 
 /* .city-btn {
@@ -20,10 +30,10 @@
 } */
 
 .city-name {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .add-city {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
