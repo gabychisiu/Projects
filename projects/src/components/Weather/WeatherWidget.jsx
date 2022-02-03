@@ -134,7 +134,7 @@ export const WeatherWidget = () => {
 
   return (
     <div className="weather-all">
-      <div>
+      <div className="city-data">
         <AddCity
           value={inputValue}
           onChange={onInputChange}

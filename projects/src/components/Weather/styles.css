@@ -15,11 +15,15 @@
     border-radius: 5px;
 }
 
-.city-btn {
-    border: solid turquoise !important;
-    padding: 0 !important;
-}
+/* .city-btn {
+    margin-left: 10px;
+} */
 
 .city-name {
     margin-right: 5px;
+}
+
+.add-city {
+    display: flex;
+    justify-content: center;
 }

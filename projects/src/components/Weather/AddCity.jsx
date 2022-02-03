@@ -1,13 +1,12 @@
-import { Button } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 
 export const AddCity = (props) => {
   return (
     <div className="add-city">
-      <input
-        className="city-name"
-        placeholder="City Name"
-        type="text"
-        name="city"
+      <TextField
+        id="outlined-basic"
+        label="City"
+        variant="outlined"
         value={props.value}
         onChange={props.onChange}
       />
